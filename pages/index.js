@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import useWorldcupJson from "../hooks/useWorldcupJson";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
@@ -35,10 +34,6 @@ export default function Home() {
 
   return (
     <>
-      <Head>
-        <title>Informasi World Cup Qatar 2022</title>
-        <link rel="icon" href="/worldcup-logo.png" />
-      </Head>
       <div className="bg-black w-full min-h-screen h-full px-6">
         <div className="text-center p-8 space-y-4">
           <h1 className="text-4xl md:text-6xl font-bold tracking-wide">WORLD CUP 2022</h1>
