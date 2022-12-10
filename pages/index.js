@@ -53,6 +53,7 @@ export default function Home() {
                   <span>{" : "}</span>
                   <span>{currentMatch.away_team.goals}</span>
                 </h3>
+                {(currentMatch.home_team.penalties !== 0 || currentMatch.away_team.penalties !== 0) ? <div>Penalty  {currentMatch.home_team.penalties} : {currentMatch.away_team.penalties}</div> : <div>&nbsp;</div>}
                 <div>{currentMatch.winner} {currentMatch.winner !== "Draw" && "Wins"}</div>
               </div>
               <div className="text-center space-y-4">
@@ -107,9 +108,9 @@ export default function Home() {
                     <div className="py-2">
                       <h3 className="font-light text-xl space-x-2">
                         <span>{item.home_team.name} vs {item.away_team.name}, </span>
-                        <span className="font-bold text-lime-400">{item.home_team.goals} : {item.away_team.goals}</span>
+                        {(item.home_team.penalties !== 0 || item.away_team.penalties !== 0) ? <span className="font-bold text-lime-400">({item.home_team.penalties})  {item.home_team.goals} : {item.away_team.goals}  ({item.away_team.penalties})</span> : <span className="font-bold text-lime-400">{item.home_team.goals} : {item.away_team.goals}</span>}
                       </h3>
-                      <p>Result: {currentMatch.winner} {currentMatch.winner !== "Draw" && "Wins"}</p>
+                      <p>Result: {item.winner} {item.winner !== "Draw" && "Wins"}</p>
                       <p className="opacity-75">{dayjs(item.datetime).fromNow()}</p>
                     </div>
                   </div>
